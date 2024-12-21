@@ -53,7 +53,7 @@ def person(name:, age:)
   puts "your name is #{name}, and your age is #{age}"
 end
 
-  
+
 # str = "KkVYVEVSTkFMKg0KDQoNCiA8aHR0cHM6Ly9ldS1hcGkubWltZWNhc3QuY29tL2JyYW5kaW5nL3Rv
 # dGFsbW9iaWxlL05PVElGSUNBVElPTl9MT0dPX0lEPg0KDQoNCllvdXIgbWVzc2FnZSBjb3VsZG4n
 # dCBiZSBkZWxpdmVyZWQNCg0KDQpUaGUgbWVzc2FnZSB5b3Ugc2VudCB0byBncmFoYW0uZGF5QGtl
@@ -86,7 +86,7 @@ def t1
 
   f ||= begin
     "INSIDE BEGIN STATEMENT."
-  
+
   end
   puts "after begin end block"
 end
@@ -104,7 +104,7 @@ class Parent
     puts "Hello from parent class."
   end
 
-  class Child < ChildNames 
+  class Child < ChildNames
   end
 end
 
@@ -125,7 +125,7 @@ puts "ERROR!!!" unless passable_codes.include?(response_code)
 
 
 # class CheUserBuilder
-  
+
 #   def initilize(team_id, call_sid,)
 #   end
 
@@ -139,7 +139,7 @@ puts "ERROR!!!" unless passable_codes.include?(response_code)
 
 #   def fetch_twilio_recording?
 #     #Return Media URL
-  
+
 #   end
 # end
 
@@ -199,7 +199,7 @@ puts "*********************"
 
 #so what do you do if you're block of code has more than
  # one line? you do the following:
-puts 
+puts
 
 
 5.times do
@@ -237,7 +237,7 @@ end
 # money_printer(3) should output MoneyMoneyMoney
 # money_printer(5) should output MoneyMoneyMoneyMoneyMoney
 # money_printer(0) should output nothing
-puts 
+puts
 
 def money_printer(num)
   num.times { print "Money" }
@@ -309,7 +309,7 @@ end
 if pwd.include?("123")
   puts "yes it does include 123!"
 end
-  
+
 puts "*********************"
 
 #Truthuness and falsiness
@@ -402,7 +402,7 @@ end
 # assignent operators
 
 #What the code below will do is assign the value of '5' to the
-# variable 'var' only if the value of 'var' is equal ti 'nil' 
+# variable 'var' only if the value of 'var' is equal ti 'nil'
 
 var = nil
 
@@ -447,7 +447,7 @@ print my_multiline_string
 fname = "JEffrey"
 lname = "mcintyre"
 
-fullname = "" 
+fullname = ""
 
 fullname += fname + lname
 puts fullname
@@ -690,7 +690,7 @@ def fizz_buzz(number)
       elsif num % 5 == 0
         puts "BIZZ"
         counter += 1
-      elsif 
+      elsif
         num % 3 == 0
         puts "FIZZ"
         counter += 1
@@ -718,7 +718,7 @@ while current_index <= final_index
   if food_sentence[current_index] != "$"
     current_index += 1
     next
-    
+
   end
   puts "Found $ at index #{current_index}"
   current_index += 1
@@ -764,7 +764,7 @@ puts jeffs_reverse(straw_word)
 
 puts "************* Array **************"
 # use the 'p' method instead of puts for a more techical output
-# it will print out the array with the elements as aposed to 
+# it will print out the array with the elements as aposed to
 # puts printing out each element on a separate line.
 
 a1 = [1,2,3,4,5]
@@ -901,7 +901,7 @@ p [3,4,5] <=> [3,4,5]
 # Returns -1 if value on the left is smaller
 p 3 <=> 31
 
-# for this one ruby will compare 3 form the left array with 3 on the right 
+# for this one ruby will compare 3 form the left array with 3 on the right
 # 4 from the left array wit 4 on the right.
 # # then 5 with 500.. so ruby will consider the left array to be smaller
 p [3,4,5] <=> [3,4,500]
@@ -926,7 +926,7 @@ soups.push("veggie", "Sweet n Sour")
 p soups
 
 # you can alls use the "Shovel" (<<)  operator
-# 
+#
 soups << "jeffrey" << "Mcintyre"
 
 p soups
