@@ -53,7 +53,7 @@ def person(name:, age:)
   puts "your name is #{name}, and your age is #{age}"
 end
 
-
+  
 # str = "KkVYVEVSTkFMKg0KDQoNCiA8aHR0cHM6Ly9ldS1hcGkubWltZWNhc3QuY29tL2JyYW5kaW5nL3Rv
 # dGFsbW9iaWxlL05PVElGSUNBVElPTl9MT0dPX0lEPg0KDQoNCllvdXIgbWVzc2FnZSBjb3VsZG4n
 # dCBiZSBkZWxpdmVyZWQNCg0KDQpUaGUgbWVzc2FnZSB5b3Ugc2VudCB0byBncmFoYW0uZGF5QGtl
@@ -86,7 +86,7 @@ def t1
 
   f ||= begin
     "INSIDE BEGIN STATEMENT."
-
+  
   end
   puts "after begin end block"
 end
@@ -104,7 +104,7 @@ class Parent
     puts "Hello from parent class."
   end
 
-  class Child < ChildNames
+  class Child < ChildNames 
   end
 end
 
@@ -125,7 +125,7 @@ puts "ERROR!!!" unless passable_codes.include?(response_code)
 
 
 # class CheUserBuilder
-
+  
 #   def initilize(team_id, call_sid,)
 #   end
 
@@ -139,7 +139,7 @@ puts "ERROR!!!" unless passable_codes.include?(response_code)
 
 #   def fetch_twilio_recording?
 #     #Return Media URL
-
+  
 #   end
 # end
 
@@ -199,7 +199,7 @@ puts "*********************"
 
 #so what do you do if you're block of code has more than
  # one line? you do the following:
-puts
+puts 
 
 
 5.times do
@@ -237,7 +237,7 @@ end
 # money_printer(3) should output MoneyMoneyMoney
 # money_printer(5) should output MoneyMoneyMoneyMoneyMoney
 # money_printer(0) should output nothing
-puts
+puts 
 
 def money_printer(num)
   num.times { print "Money" }
@@ -309,7 +309,7 @@ end
 if pwd.include?("123")
   puts "yes it does include 123!"
 end
-
+  
 puts "*********************"
 
 #Truthuness and falsiness
@@ -402,7 +402,7 @@ end
 # assignent operators
 
 #What the code below will do is assign the value of '5' to the
-# variable 'var' only if the value of 'var' is equal ti 'nil'
+# variable 'var' only if the value of 'var' is equal ti 'nil' 
 
 var = nil
 
@@ -447,7 +447,7 @@ print my_multiline_string
 fname = "JEffrey"
 lname = "mcintyre"
 
-fullname = ""
+fullname = "" 
 
 fullname += fname + lname
 puts fullname
@@ -690,7 +690,7 @@ def fizz_buzz(number)
       elsif num % 5 == 0
         puts "BIZZ"
         counter += 1
-      elsif
+      elsif 
         num % 3 == 0
         puts "FIZZ"
         counter += 1
@@ -718,7 +718,7 @@ while current_index <= final_index
   if food_sentence[current_index] != "$"
     current_index += 1
     next
-
+    
   end
   puts "Found $ at index #{current_index}"
   current_index += 1
@@ -764,7 +764,7 @@ puts jeffs_reverse(straw_word)
 
 puts "************* Array **************"
 # use the 'p' method instead of puts for a more techical output
-# it will print out the array with the elements as aposed to
+# it will print out the array with the elements as aposed to 
 # puts printing out each element on a separate line.
 
 a1 = [1,2,3,4,5]
@@ -901,7 +901,7 @@ p [3,4,5] <=> [3,4,5]
 # Returns -1 if value on the left is smaller
 p 3 <=> 31
 
-# for this one ruby will compare 3 form the left array with 3 on the right
+# for this one ruby will compare 3 form the left array with 3 on the right 
 # 4 from the left array wit 4 on the right.
 # # then 5 with 500.. so ruby will consider the left array to be smaller
 p [3,4,5] <=> [3,4,500]
@@ -926,7 +926,7 @@ soups.push("veggie", "Sweet n Sour")
 p soups
 
 # you can alls use the "Shovel" (<<)  operator
-#
+# 
 soups << "jeffrey" << "Mcintyre"
 
 p soups
@@ -969,3 +969,600 @@ p numbs.shift(2) #=> [2,3]
 # unshift adds to the beginning of an array
 # # So it removes it from the original array and assigns it to a new array
 p numbs.unshift(45) #=> [45,4,5]
+
+puts "************* Ranages **************"
+
+inclusive_ranges = 1..5
+exclusive_ranges = 1...5
+
+puts "This is an inclusive range #{inclusive_ranges.first}"
+
+puts "This is an exclusive range #{exclusive_ranges.last}"
+
+# if using a parameter it will not include the last number
+puts "This is an exclusive range #{exclusive_ranges.last(2)}"# => [3,4]
+
+#this will include the last number
+puts "This is an inclusive range #{inclusive_ranges.last(2)}"
+
+
+puts "************* Alphabet Ranages **************"
+#Similar to the inter way of doing things.
+alphabet = "a".."z"
+include_capital = "A".."z"
+
+
+puts "Here are the first 4 letters of the alphabet #{alphabet.first(4)}" #=> ["a","b","c","d"]
+
+puts include_capital.first(30)
+
+#Side note the inclusive is always two dots as opposed to three dots (exclusive)
+
+puts "************* for includes Alphabet Ranages **************"
+
+puts alphabet.include?("x") # is 'x' included in the range you set above?
+
+# you can also use the 'member' method
+# 
+# is 'j' a member of the range you set above?
+puts alphabet.member?("j") #=> True
+
+jeff_a1 = %w[apples pears peaches]
+
+puts "Is 'pears' part of the above array? #{jeff_a1.member?("pears")}"
+
+# you can triple equals '==='
+# the first equals is teh assignement operator
+# the second equals cheks to see of both sides of the operator are equal
+# the third one checks for inclusion
+
+#Can be used for arrays.
+puts "Using the triple equals is 'apples' include? ANs: #{jeff_a1 === "apples"}"
+
+puts "Using the triple equals is 'j' include? ANs: #{alphabet === "j"}"
+
+p jeff_a1
+
+
+puts "************* random ints  **************"
+
+# it just generates a random int
+# 
+puts rand
+puts rand.round(3)
+
+puts rand.round(4) * 30
+
+# adding an inter will not be inclusive it will omit the number you enter in.
+puts rand(100) 
+
+puts rand(1..100) # inclusive
+
+
+
+puts "************* extract from a range **************"
+
+my_story = "The cow went to the moon"
+puts my_story
+#Start at index 6 and pull up to and include the 6th char in my string
+puts "BLAH #{my_story[0..6]}" #= "The cow"
+
+#exclusive - don't include the 1st and last
+puts my_story[0...6] #
+
+puts my_story.slice(0..6)
+
+# start at the 1st char and include the last third char
+puts my_story[0..-3]
+
+#replacing chars within a range
+puts my_story[0..2] = "jef" #= "jef cow went to the moon"
+puts my_story
+
+
+puts "************* case statment with ranges **************"
+
+#90 to 100 is an A
+#80 to 89 is a B
+#70 to 79 is a C
+#69 to 79 is a D
+#< 68 us an F
+
+def calculate_test_grad(grade)
+  case grade
+  when 100 then "Perfect Grade!"
+  when 90..99 then "Grade A"
+  when 80..89 then "Grade B"
+  when 70..79 then "Grade C"
+  when 69..79 then "Grade D"
+  else
+    "Grade F"
+  end
+end
+
+puts calculate_test_grad(87)
+puts calculate_test_grad(66)
+puts calculate_test_grad(100)
+
+
+puts "************* convert range to an array**************"
+
+my_letter_range = "a".."h"
+
+my_letter_range = my_letter_range.to_a
+
+p  my_letter_range
+
+my_number_range = 1..50
+
+my_number_range = my_number_range.to_a
+
+#not that its an array ,etract the first and dont in clude the 20th number
+# 20 is the 19th number in the array it will technically include the number '20'
+p my_number_range[0...20]
+
+def do_something_v9(num)
+  password = ""
+  start = true
+  foobar = nil
+  unless start == true
+    num.times { puts "FOOBAR" }
+  end
+
+  foobar ||= unless start == false
+    "BLAH"
+  end
+
+  unless  password.length == num
+
+    until password.length == num
+      password << "jsj"
+    end
+  end
+  [password, foobar]
+
+end
+
+
+
+puts "************* interation over  arrays **************"
+
+
+
+
+puts "************* Map and Collect Methods  **************"
+five_elements = [2,4,6,8,10]
+
+doubled_numbers = []
+
+five_elements.each { |num| doubled_numbers << (num * 2)}
+
+p doubled_numbers
+
+# here is the samething using the map method
+
+doubled_numbers = five_elements.map { |num| num * 2 }
+
+p doubled_numbers
+
+# here is the samething using the 'collect' method
+ # its just an alias for map.
+doubled_numbers = five_elements.collect { |num| num * 2 }
+
+p doubled_numbers
+
+puts "************** The select and reject Methods **************"
+# select - filter array for elemets that satisfy a condition
+# reject - same bot dont satifty condition.
+
+# the important thing here is that the condition must be True
+#  in order for the ruby to  'Select' the item to be added to the new array.
+is_even_number = [1,2,3,4,5,6,7,8,9,10].select { |numb| (numb % 2 == 0)} # => [2, 4, 6, 8, 10] 
+p is_even_number
+
+#Reject the ones that do not satify the condition.
+# in this case, 'REJECT' the even numbers and add the odd numbers to the array
+is_odd_number =  [1,2,3,4,5,6,77,8,9,10].reject { |numb| (numb % 2 == 0)} #=> [1, 3, 5, 77, 9]
+p is_odd_number
+
+
+#Reject the words that have the letter 'o' in it
+my_words = %w[was can tam some tom]
+
+o_words = my_words.reject { |word| word.include?("o") }
+p o_words
+
+#Select the words that  have the letter 'o' in it
+my_words = %w[was can tam some tom]
+
+a_words = my_words.select { |word| word.include?("o") }
+p a_words
+
+
+#Reject the words that DONT have the letter 'o' in it
+my_words = %w[was can tam some tom]
+
+# notice the 'bang!' sign to make it not true
+o_words = my_words.reject { |word| !word.include?("o") }
+p o_words
+
+
+
+#select and reject will return an empty array if no match is found
+o_words = my_words.reject { |word| !word.include?("NN") } #=> []
+p o_words
+
+o_words = my_words.select { |word| word.include?("FOOBAR") } #=> []
+p o_words
+
+
+puts "**************  The partition Method ************"
+#splits the array into two arrays
+# we can basially do the same as the 'select' and 'reject' methods
+# using the partition method.
+
+# so basically what it will do is it will store the items that are True
+#   in one array and the ones that are false in another array
+p my_words.partition { |word| word.include?("o") } #=> [ ["some", "tom"], ["was", "can", "tam"] ]
+
+a1, a2 = my_words.partition { |word| word.include?("o") }
+
+p a1
+p a2
+
+#playing around with some functions.
+def reverse_all(arry)
+  arry.map { |word| word.reverse }
+end
+
+def words_with_letter(arry, letter)
+  arry.reject { |word| !word.include?(letter) }
+end
+
+
+def evens_and_odds(arry)
+  arry.partition { |number| number % 2 == 0 }
+end
+
+puts "**************  any? all? methods  ************"
+
+sports = %w[baseball golf mma basketball tennis vollyball]
+
+# is there 'ANY' item that contains the word 'ball'
+p sports.any? { |word| word.include?('ball')} #=> true
+
+# is there 'ANY' item that contains less than 10 chars
+p sports.any? { |word| word.size < 10 } #=> true
+
+# is there 'ALL' items  contains letter 'b'?
+p sports.all? { |word| word.include?('b') } #=> false
+
+def has_greater_than_seven_characters(arry)
+  arry.any? { |word| word.size > 7 }
+end
+
+def against_all_odds(arry)
+  arry.all? { |numb| numb % 2 == 0 } 
+end
+
+
+puts "**************  find and detect methods methods  ************"
+# finds the first array element that finds and matches teh condition.
+#  this is different than the all? predicate method in that it only extracts
+#  the first element not ALL.
+
+more_words = %w[dictionary regfrigerator mircrowave canderwave]
+
+p more_words.find { |word| word.include?("wave") } #=> "mircrowave"
+
+#detect does the samething
+p more_words.detect { |word| word.include?("wave") } #=> "mircrowave"
+
+
+
+puts "****************** The index and find_index (same) **************"
+more_words = %w[dictionary regfrigerator mircrowave canderwave]
+
+p more_words.index("regfrigerator") #=> 1
+p more_words.index("hammer") #=> nil
+
+
+puts "****************** include? for ARRAYS (same) for string **************"
+
+more_words = %w[dictionary regfrigerator mircrowave canderwave]
+
+p more_words.include?("dictionary") #=> true
+
+
+
+
+puts "****************** max and min methods **************"
+#works the same like python.
+#
+
+
+puts "****************** methods that accept U/nLIMITED amount of args **************"
+# this is how u setup a function to accept unlimited args
+#  I think this is the same for python?...
+def add_unlimited_stuff(*number)
+  p number
+end
+
+add_unlimited_stuff(1,3,4,5,67,8) #=> [1, 3, 4, 5, 67, 8]
+
+def add_some_numbers(*numbers)
+  sum = 0
+  numbers.each { |num| sum += num }
+  sum
+end
+
+p add_some_numbers(1,3,4,56,3,6,6,7,6)# => 92
+p add_some_numbers(3) #=> 3
+
+# in the real world you might have required parameters like so.
+
+def jeff_add_some_numbers(arg1, arg2, *numbers)
+  sum = 0
+  numbers.each { |num| sum += num }
+  sum
+end
+
+# the reason its 88 is becase ruby only captured what was
+#  in the array  ---- the method is only summing
+#   up the numbers in the array.
+#     which in this case ignores '1', '3' - the 1st two require args.
+p jeff_add_some_numbers(1,3,4,56,3,6,6,7,6)#=> 88
+
+
+#here is me adding the use of the two require args
+def req_jeff_add_some_numbers(arg1, arg2, *numbers)
+  sum = 0
+  numbers.each { |num| sum += num }
+  [arg1, arg2].each { |num| sum += num }
+  sum
+end
+
+p req_jeff_add_some_numbers(1,3,4,56,3,6,6,7,6)#=> 92
+
+
+puts "***********  The split Method on a String *********"
+# this works just like python.
+
+sentences = "Hi, my name is jeff mci from channelhealth."
+
+p sentences.split
+
+p sentences.split(",")
+
+def longest_word(strg)
+  split_sentence = strg.split
+  return strg if split_sentence.length == 1
+  word_length_placeholder = [split_sentence.index(split_sentence[0]),split_sentence.shift.length]
+
+  split_sentence.each do |word|
+    return word if word.length == word_length_placeholder[1]
+    if word_length_placeholder[1] > word.length
+      split_sentence.shift
+    else
+      word_length_placeholder = [split_sentence.index(word),split_sentence.shift.length]
+    end
+  end
+  split_sentence[word_length_placeholder[0]]
+end
+
+p longest_word("isdsdsdsd went to the store today")
+
+
+
+puts "*********** The count Method on a String ************"
+#one thing to note about the 'count' method is that
+# if your using it against strings with multiple letters as a parameter.
+# it will count EACH individual letter
+#
+#ex
+puts "jeffrey".count("re") #=> 3 becuase there are two 'e's  and one 'r'
+
+def char_search(strg, search_char)
+  strg.count(search_char)
+end
+
+puts "*********** Index Method on a String ************"
+# alwasy remember that it will retrn the index
+# of the first occurance of the char
+puts "apppple".index("p") #=> 1
+
+# it can search for a string of chars
+# it does not work like count. 
+# it will return the first occurance of the string
+puts "spinach".index("pin") #=> 1
+
+# it also accepts a second parameter 
+# that will say where to start looking.
+puts "spinachpeanutbutter".index("a",2) #=> 4
+puts "spinachpeanutbutter".index("a",6) #=> 9
+
+
+puts "*********** rindex Method on a String ************"
+#same as index except it search from right to left.
+puts "spinachpeanutbutter".rindex("e") #=> 17
+
+
+puts "*********** delete Method on a String ************"
+
+puts "spinachpeanutbutter".delete("e") #=> spinachpanutbuttr
+
+# it will delete all the chars to delete. NOT the sequence
+puts "spinachpeanutbutter".delete("eu") #=> spinachpantbttr
+
+
+puts "*************** Object References **********"
+#This is the same as python.
+a = [1,2,3]
+b = a
+
+p a.object_id #=> 60 ( same place in memory )
+p b.object_id #=> 60 ( same place in memory )
+
+p [1,2,3].object_id #=> 80 differe place in memory
+
+
+puts "************** The dup and clone Methods **********"
+
+c = [1,2,3]
+
+d = c.dup
+
+p c.object_id #=100
+p d.object_id #-> 120
+
+e = c.clone
+
+p e.object_id #=> 140
+
+
+puts "************* The freeze Method ************"
+#this method will explain the difference between
+#'dup' and 'clone'
+# Freeze will make an object immutable.
+
+name = "jeff".freeze
+
+# name << 'mcinture' #=> `<main>': can't modify frozen String: "jeff" (FrozenError)
+
+#with dup you will still get a copy  can be modified.
+
+
+#can modify it
+name_dup = name.dup
+name_dup << " Mcintyre"
+p name_dup
+
+
+
+#with clone THE COPY IS FROOZEN and CANT be Modified
+name_dup2 = name.clone
+
+# #CANT modify it
+# name_dup2 << " Mcintyre"
+p name_dup2
+
+
+puts "************ Passing Objects to Mutating Methods ********"
+
+# for instance, the changes made will depend on the
+# object passed as a parameter.
+def append_5(elements)
+  elements << 5
+end
+
+# Here is another
+named = "jeffrey"
+
+def upcase_name(text)
+  text.upcase!
+end
+
+puts named
+
+
+puts "************ Hashes ********"
+
+emply_hash = {}
+
+puts emply_hash.class
+
+nfl_teams = {
+  "team1" => "Giants",
+  "team2" => "Jets",
+  "team3" => "Ravens",
+  "salaries" => [1_000_000, 46_000_000]
+}
+
+p nfl_teams.length
+
+
+# you can also do it this way
+# fetch will return an exception if the key is not found.
+#  it can provide a default value if it doenst exist.
+p nfl_teams.fetch("team1", "Key entered does not exist")
+
+p nfl_teams.fetch("garbage", "Key entered does not exist")
+
+
+puts "************  Intro to Symbolss ********"
+# a symbol cannot be modified  like a string.. 
+# it just needs to exist.. its immutable
+# so in RUBY the convention is to use symbols as hash keys
+# its faster to use than strings.. because of less methods
+# used than a regular string.
+
+# EXAMPLE 1
+puts :hello # this is a symbol called ;hello
+puts :hello.class
+puts "hello".class
+
+
+puts "************ Symbols as Hash Keys ********"
+# using symbold as keys is really common.
+
+person = {
+  :name => "jeffrey",
+  :location => "Bklyn",
+  :is_tall => false
+}
+
+# to extract the  value in the hash ,..sinc
+# it was created with a symbol we have to use the same syntax
+
+p person[:name]
+p person[:location
+
+]
+
+# Here is an easier way to build hashes with symbols
+#   # removing the hashRocket and moving the colon to the end
+#    of the symbol.
+
+persons = {
+  name: "mcintyre",
+  location: "BklynNY"
+}
+
+p persons[:location]
+
+
+
+
+
+puts "************ Add a New Key-Value Pair to Hash ********"
+
+menu = { 
+  burger: 3.99,
+  chips: 1.99,
+  drink: 5.99
+}
+#adding veggies
+menu[:veggies] = %w[spinach  kale beets]
+
+p menu[:veggies]
+
+# you can also use th "store method"
+p menu.store(:fruits, %w[apples pears peaches])
+
+
+puts "************putting into practice ********"
+
+# accepts 2 arrays - array 1 should be used as
+# the keys and a2 should be the values
+
+
+
+def hash_from_arrays(arry_1, arry_2)
+  results = {}
+  arry_1.each_with_index { |a1_key, index| results[a1_key] = arry_2[index] }
+  results
+end 
+
+p hash_from_arrays(['p','s'],['pat','sat'])
+
+
