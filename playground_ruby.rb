@@ -53,7 +53,7 @@ def person(name:, age:)
   puts "your name is #{name}, and your age is #{age}"
 end
 
-  
+
 # str = "KkVYVEVSTkFMKg0KDQoNCiA8aHR0cHM6Ly9ldS1hcGkubWltZWNhc3QuY29tL2JyYW5kaW5nL3Rv
 # dGFsbW9iaWxlL05PVElGSUNBVElPTl9MT0dPX0lEPg0KDQoNCllvdXIgbWVzc2FnZSBjb3VsZG4n
 # dCBiZSBkZWxpdmVyZWQNCg0KDQpUaGUgbWVzc2FnZSB5b3Ugc2VudCB0byBncmFoYW0uZGF5QGtl
@@ -86,7 +86,7 @@ def t1
 
   f ||= begin
     "INSIDE BEGIN STATEMENT."
-  
+
   end
   puts "after begin end block"
 end
@@ -104,7 +104,7 @@ class Parent
     puts "Hello from parent class."
   end
 
-  class Child < ChildNames 
+  class Child < ChildNames
   end
 end
 
@@ -125,7 +125,7 @@ puts "ERROR!!!" unless passable_codes.include?(response_code)
 
 
 # class CheUserBuilder
-  
+
 #   def initilize(team_id, call_sid,)
 #   end
 
@@ -139,7 +139,7 @@ puts "ERROR!!!" unless passable_codes.include?(response_code)
 
 #   def fetch_twilio_recording?
 #     #Return Media URL
-  
+
 #   end
 # end
 
@@ -199,7 +199,7 @@ puts "*********************"
 
 #so what do you do if you're block of code has more than
  # one line? you do the following:
-puts 
+puts
 
 
 5.times do
@@ -237,7 +237,7 @@ end
 # money_printer(3) should output MoneyMoneyMoney
 # money_printer(5) should output MoneyMoneyMoneyMoneyMoney
 # money_printer(0) should output nothing
-puts 
+puts
 
 def money_printer(num)
   num.times { print "Money" }
@@ -309,7 +309,7 @@ end
 if pwd.include?("123")
   puts "yes it does include 123!"
 end
-  
+
 puts "*********************"
 
 #Truthuness and falsiness
@@ -402,7 +402,7 @@ end
 # assignent operators
 
 #What the code below will do is assign the value of '5' to the
-# variable 'var' only if the value of 'var' is equal ti 'nil' 
+# variable 'var' only if the value of 'var' is equal ti 'nil'
 
 var = nil
 
@@ -447,7 +447,7 @@ print my_multiline_string
 fname = "JEffrey"
 lname = "mcintyre"
 
-fullname = "" 
+fullname = ""
 
 fullname += fname + lname
 puts fullname
@@ -690,7 +690,7 @@ def fizz_buzz(number)
       elsif num % 5 == 0
         puts "BIZZ"
         counter += 1
-      elsif 
+      elsif
         num % 3 == 0
         puts "FIZZ"
         counter += 1
@@ -718,7 +718,7 @@ while current_index <= final_index
   if food_sentence[current_index] != "$"
     current_index += 1
     next
-    
+
   end
   puts "Found $ at index #{current_index}"
   current_index += 1
@@ -764,7 +764,7 @@ puts jeffs_reverse(straw_word)
 
 puts "************* Array **************"
 # use the 'p' method instead of puts for a more techical output
-# it will print out the array with the elements as aposed to 
+# it will print out the array with the elements as aposed to
 # puts printing out each element on a separate line.
 
 a1 = [1,2,3,4,5]
@@ -901,7 +901,7 @@ p [3,4,5] <=> [3,4,5]
 # Returns -1 if value on the left is smaller
 p 3 <=> 31
 
-# for this one ruby will compare 3 form the left array with 3 on the right 
+# for this one ruby will compare 3 form the left array with 3 on the right
 # 4 from the left array wit 4 on the right.
 # # then 5 with 500.. so ruby will consider the left array to be smaller
 p [3,4,5] <=> [3,4,500]
@@ -926,7 +926,7 @@ soups.push("veggie", "Sweet n Sour")
 p soups
 
 # you can alls use the "Shovel" (<<)  operator
-# 
+#
 soups << "jeffrey" << "Mcintyre"
 
 p soups
@@ -1003,7 +1003,7 @@ puts "************* for includes Alphabet Ranages **************"
 puts alphabet.include?("x") # is 'x' included in the range you set above?
 
 # you can also use the 'member' method
-# 
+#
 # is 'j' a member of the range you set above?
 puts alphabet.member?("j") #=> True
 
@@ -1027,14 +1027,14 @@ p jeff_a1
 puts "************* random ints  **************"
 
 # it just generates a random int
-# 
+#
 puts rand
 puts rand.round(3)
 
 puts rand.round(4) * 30
 
 # adding an inter will not be inclusive it will omit the number you enter in.
-puts rand(100) 
+puts rand(100)
 
 puts rand(1..100) # inclusive
 
@@ -1157,7 +1157,7 @@ puts "************** The select and reject Methods **************"
 
 # the important thing here is that the condition must be True
 #  in order for the ruby to  'Select' the item to be added to the new array.
-is_even_number = [1,2,3,4,5,6,7,8,9,10].select { |numb| (numb % 2 == 0)} # => [2, 4, 6, 8, 10] 
+is_even_number = [1,2,3,4,5,6,7,8,9,10].select { |numb| (numb % 2 == 0)} # => [2, 4, 6, 8, 10]
 p is_even_number
 
 #Reject the ones that do not satify the condition.
@@ -1242,7 +1242,7 @@ def has_greater_than_seven_characters(arry)
 end
 
 def against_all_odds(arry)
-  arry.all? { |numb| numb % 2 == 0 } 
+  arry.all? { |numb| numb % 2 == 0 }
 end
 
 
@@ -1372,11 +1372,11 @@ puts "*********** Index Method on a String ************"
 puts "apppple".index("p") #=> 1
 
 # it can search for a string of chars
-# it does not work like count. 
+# it does not work like count.
 # it will return the first occurance of the string
 puts "spinach".index("pin") #=> 1
 
-# it also accepts a second parameter 
+# it also accepts a second parameter
 # that will say where to start looking.
 puts "spinachpeanutbutter".index("a",2) #=> 4
 puts "spinachpeanutbutter".index("a",6) #=> 9
@@ -1490,7 +1490,7 @@ p nfl_teams.fetch("garbage", "Key entered does not exist")
 
 
 puts "************  Intro to Symbolss ********"
-# a symbol cannot be modified  like a string.. 
+# a symbol cannot be modified  like a string..
 # it just needs to exist.. its immutable
 # so in RUBY the convention is to use symbols as hash keys
 # its faster to use than strings.. because of less methods
@@ -1536,7 +1536,7 @@ p persons[:location]
 
 puts "************ Add a New Key-Value Pair to Hash ********"
 
-menu = { 
+menu = {
   burger: 3.99,
   chips: 1.99,
   drink: 5.99
@@ -1561,8 +1561,269 @@ def hash_from_arrays(arry_1, arry_2)
   results = {}
   arry_1.each_with_index { |a1_key, index| results[a1_key] = arry_2[index] }
   results
-end 
+end
 
 p hash_from_arrays(['p','s'],['pat','sat'])
 
 
+puts "************ convert hash to array , vice versa ********"
+
+pd_arys = {
+  pd1: "FVG",
+  pd2: "orderblock",
+  pd3: "IFVG"
+}
+
+p pd_arys.to_a # = [[:pd1, "FVG"], [:pd2, "orderblock"], [:pd3, "IFVG"]]
+
+# important note, you can't convert a regulat array to a hash.. you mush provide the keys you weant in the hash.
+
+#ex
+will_not_work = [1,2,3,4,5]
+
+will_work = [
+  [:one, 1],
+  [:two, 2],
+  [:three,3]
+]
+
+p will_work.to_h
+
+
+puts "************ delete method in hash ********"
+
+pd_arys = {
+  pd1: "FVG",
+  pd2: "orderblock",
+  pd3: "IFVG"
+}
+
+# delete wilil delete the value and the key .. but it will return the  Value
+p pd_arys.delete(:pd1)
+
+p pd_arys
+
+
+puts "************ The merge Method ********"
+# combines to hashes together.
+
+
+pd_arys = {
+  pd1: "FVG",
+  pd2: "orderblock",
+  pd3: "IFVG",
+
+}
+
+averages = {
+  avg1: "NAS",
+  avg2: "ES",
+  avg3: "DOW",
+
+}
+
+p pd_arys.merge(averages) #=> {:pd1=>"FVG", :pd2=>"orderblock", :pd3=>"IFVG", :avg1=>"NAS", :avg2=>"ES", :avg3=>"DOW"}
+
+ # what happens if there are duplicates? ans: the hash that is used as an argument wins. - its value will be used.
+
+ pd_arys = {
+  pd1: "FVG",
+  pd2: "orderblock",
+  pd3: "IFVG",
+  avg4: "SPX_blah" #=> same key
+}
+
+
+averages = {
+  avg1: "NAS",
+  avg2: "ES",
+  avg3: "DOW",
+  avg4: "SPX" #=> same key
+}
+
+
+p pd_arys.merge(averages) #=> {:pd1=>"FVG", :pd2=>"orderblock", :pd3=>"IFVG", :avg4=>"SPX", :avg1=>"NAS", :avg2=>"ES", :avg3=>"DOW"}
+
+
+
+puts "************ Create Hash with Default Value (Hash.new) ********"
+
+#this gives you the ability to reerence a hash that does not exist.
+
+def default_value
+  "DOES NOT EXIST!!!!"
+end
+
+numbers = Hash.new(default_value) # this creates a brand new hash
+
+numbers[:numb1] = 1
+numbers[:numb2] = 2
+
+p numbers #=>{:numb1=>1, :numb2=>2}
+
+#now reference a key that does not exist
+
+p numbers[:new_key] #=> "DOES NOT EXIST!!!!"
+
+
+
+puts "************ Reference Problems with Hash.new ********"
+# IF you use an array as the default ..ruby will return the ssame
+# array for each time you reference a key that does not exist.
+fruits_1 = Hash.new([])
+
+
+#Apple key does not exist so lets add something to the default array
+fruits_1[:apple] << "item1"
+p fruits_1[:apple] #=> ["item1"]
+
+
+#Apple key does not exist so lets add something to the default array
+fruits_1[:pear] << "item2"
+p fruits_1[:pear] #=> ["item1", "item2"]
+
+
+puts "************ to solve the above you can use blocks for Hash.new default********"
+#ths is how we solve the issue with keys sharing the same array
+
+veggies = Hash.new do |hash, key|
+  my_array = []
+  hash[key] = my_array
+end
+
+
+# currently "brussels does not exist so it returned an empty array."
+p veggies[:brussels] # => []
+
+# this point not it exists
+p veggies #=>  {:brussels=>[]}
+
+#adding to brussels
+p veggies[:brussels] << "sprouts"
+p veggies #=> {:brussels=>["sprouts"]}
+
+
+# playing with it.
+
+veggies = Hash.new do |hash, key|
+  my_hash = {}
+  my_hash[:"#{key}"] = []
+
+end
+
+p veggies[:leafy]  #=> []
+
+p veggies[:leafy] = "greens"
+
+p veggies #=> {:leafy=>"greens"}
+
+
+# here is a more simpler way to code it.
+
+veggies = Hash.new do |hash, key|
+  my_hash[key] = []
+end
+
+
+puts "************ The sort Method********"
+
+p  a1 = [5,6,3,67,5,53535].sort
+
+#reverse it.
+
+p  a1 = [5,6,3,67,5,53535].sort.reverse
+
+
+puts "************ The uniq Method********"
+# removes all duplicates in array
+
+dups = [8,8,8,4,3,6,7,3,2]
+
+p dups.uniq #=> [8, 4, 3, 6, 7, 2]
+
+#lets mutate it using bang version
+dups.uniq!
+p dups #=> [8, 4, 3, 6, 7, 2]
+
+
+puts "************ compact method ********"
+
+# removes all nil values in an array.
+
+nil_values = [3,2,4,nil,true,42,nil, nil]
+p nil_values.compact
+
+#also has a bang version
+nil_values.compact!
+
+
+puts "************ The inject and reduce Methods ********"
+#they both do the samething so you can pick which one you like to use.
+
+# if we wannted to get the avg for the below. we would typically
+#use the map method which would return an array..
+# but what we wont is actually just the new value not an array.
+ # reduce takes in an argument and a block.
+
+ # here is how the syntax works
+    # [10,20,30].reduce() { |sum, item_in_iteration | <what we will return to the next item in the iteration >}
+    # now heres the thing.. since we're iterating over all the numbers..
+   #  we will need a starting point.. we can't start from 10 becaues there is nothing before it...
+   #  with s bad because we need to include it in the calculation.. so to do this we enter the starting
+   #    number ( or starting point if you're not usin integers ) and insert a number as a parameter to
+    #   the reduce method
+p [10,20,30].reduce(0) { |sum, number| sum + number}  # => 60
+
+      # here is what each iteration looks like
+# element = 10, sum = 0, number = 10, sum + number = 10
+# element = 20, sum = 10, number = 20, sum + number = 30
+# element = 30, sum = 30, number = 30, sum + number = 60
+
+
+p [10,20,30].reduce(100) { |sum, number| sum + number}  # => 160
+
+
+# not using integers - checking to see how many times a value shows up in the array.
+color_counts = %w[Red Blue Red].reduce({}) do  |counts, current_color| #the 'counts' represents the default hash {}
+  # check to see if the color exists as a key
+  if counts[current_color].nil?
+    counts[current_color] = 1
+  else
+    counts[current_color] += 1
+  end
+  counts # the reason why we're putting ths here is because we need to provide the next item in the iteration the
+          # returned value
+          # whatever is the final evaluation of the block will be use as the block variable for the
+             #next iteration.
+end
+
+p color_counts # => {"Red"=>2, "Blue"=>1}
+
+
+
+puts "************ The flatten Method ********"
+# just like pythong , it flattens a multideminsional array into a single array.
+
+people = ["jeff", "jam", ["allan", "wagger", "jamila"], "mcintyre", [1,2,3,4,5,[5,5,5],]]
+
+p people.flatten
+
+
+puts "************ The sample Method ********"
+# if invoke alone it will return a random element
+
+flavors = %w[vanilla chocolate peach orange]
+
+p flavors.sample #=> 'vanilla'
+p flavors.sample #=> 'peach'
+
+
+# howver if  you use a number it says how many random elements to store in that array
+p flavors.sample(3)#=> ["chocolate", "peach", "vanilla"]
+p flavors.sample(3)#=> ["chocolate", "vanilla", "orange"]
+
+
+puts "************ Multiply an Array with an Asterisk********"
+
+mult_arry = %w[mah bah lah]
+p mult_arry * 3 #=> ["mah", "bah", "lah", "mah", "bah", "lah", "mah", "bah", "lah"]
