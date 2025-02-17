@@ -1827,3 +1827,51 @@ puts "************ Multiply an Array with an Asterisk********"
 
 mult_arry = %w[mah bah lah]
 p mult_arry * 3 #=> ["mah", "bah", "lah", "mah", "bah", "lah", "mah", "bah", "lah"]
+
+
+
+
+puts "************ . Merge Arrays and Exclude Duplicates ********"
+# Merging two arrays together and removing duplicates.
+ # we do this using the "union-operator" which is a pipe "|"
+
+p [1,3132,3,3,3,4] | [3,3,3,4,5,6,7] #=> [1, 3132, 3, 4, 5, 6, 7]
+
+
+# heres the cool thing.. the vertical pipe is actually a method.. so you can call it  like a method.
+
+my_arry = [1,3132,3,3,3,4]
+
+p my_arry.|([3,3,3,4,5,6,7]) # we invloke it in perenthessis like other methods.  #=> [1, 3132, 3, 4, 5, 6, 7]
+
+
+# you can do multiple pipes..
+p my_arry.|([5,3,2,6,77]).|([100,300,400576,7474747]) #=> [1, 3132, 3, 4, 5, 2, 6, 77, 100, 300, 400576, 7474747]
+
+
+
+puts "************ Remove Array Items that Exist in Another Array ********"
+# any elements that are found in the first array ar removed from the second array
+    # you do this by using the minus sign.
+
+# remove all occurrances of "2" and "3" from the first array.
+p [1,1,2,2,3,3,3,4,5,6] - [2,3] #=> [1, 1, 4, 5, 6]
+
+# using the method way of coding it..really cool
+my_a2 = [1,1,2,2,3,3,3,4,5,6]
+
+p my_a2.-([2,3]) #=> [1, 1, 4, 5, 6] same output
+
+
+
+puts "************ Array Intersection with the Ampersand Symbol ********"
+# combines multiple arrays and keeps the items that are found in both.
+
+my_a3 = [1,2,3,4,4,4,5]
+
+p my_a3.&([1,4]) #=> [1,4]
+
+p my_a3.&([2,5]).&([1])
+
+
+puts "************ Review of Blocks ********"
