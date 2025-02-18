@@ -1875,3 +1875,164 @@ p my_a3.&([2,5]).&([1])
 
 
 puts "************ Review of Blocks ********"
+ p [2,3,4,5,6].map {|value| value * 100}
+
+
+ puts "************ how to configure a method to accept a block ********"
+ # we simply use the 'yeild' keyWord
+
+ def pass_control_to_block
+  puts "i'm at the start of this method"
+  yield
+  puts "Now i'm back inside the method"
+ end
+
+ pass_control_to_block { puts "now i'm inside the block"}
+
+ # you can use yield more than once..
+
+
+ puts "************ Block Return Values ********"
+ # when we usse the yield keyword, the block will capture
+  # and return the output from the block.
+  # so this is how we can take that value from the block and
+      # assign it to a  variable
+def favorite_color
+  puts "favorite color"
+  color = yield
+  color
+end
+
+favorite_color do
+  puts "BLUE-GRAY"
+end
+
+# NEVER USE A RETURN KEYWORD IN A BLOCK.
+
+
+
+puts "************ The block_given? Method ********"
+
+#BY default blocks will raise an exception if you dont use a
+ # block for a method that accepts a block..its called a "(LocalJumpError)"
+
+# but with the block_given? predicate you can check to see if
+#one was given, if not you  can continue with additional
+#code  -- its more flexible.
+
+def pass_control
+  puts "we're inside the method"
+  if block_given?
+    yield
+  end
+  puts "back inside the method"
+end
+
+#another way to write
+
+def pass_control
+  puts "we're inside the method"
+  yield if block_given?
+  puts "back inside the method"
+end
+
+
+pass_control {puts "jeffs block"}
+pass_control
+
+
+puts "************ Block Parameters********"
+# yield can have parameters.
+
+def favorite_pda
+  yield("IFVG")
+end
+
+favorite_pda { |jeffs_favorite_pda| puts "My favoriate pda is #{jeffs_favorite_pda}"}
+
+
+def favorite_pda2(pda)
+  yield(pda)
+end
+
+favorite_pda2("OrdeBlock") { |jeffs_favorite_pda| puts "My favoriate pda is #{jeffs_favorite_pda}"}
+
+
+
+puts "************ Cominbing ideas for blocks and build custome Each method ********"
+
+jeffs_fav_pdas = %w[orderblock fvg ifvg]
+
+def jeffs_each_method(elements)
+  i = 0
+  while i < elements.length
+    yield elements[i]
+    i += 1
+  end
+end
+
+jeffs_each_method(jeffs_fav_pdas) { |pda|  puts "favorite pda  is #{pda}" }
+
+
+puts "********** jeffs custom map method ***************"
+
+
+j_numbers = [2,3,4,5,6]
+
+def custom_map(arry)
+  counter = 0
+  new_arry = Array.new
+
+  while counter < arry.size
+      new_arry << yield(arry[counter])
+      counter += 1
+  end
+  new_arry
+end
+
+map1 = custom_map(j_numbers) do |item|
+  item * 2
+end
+
+p map1 #=> [4, 6, 8, 10, 12]
+
+
+
+puts "********** blocks procs and lambdas are different ***************"
+# blocks are not objects meaning we can't save them for later use.
+# Procs are object representation of a block..so it  solves that issue blocks have..
+
+#ex
+to_cubes = Proc.new { |number| number ** 3} #using procs, we've assigned a 'block' to a variable for later use.
+
+# can also be coded like this
+
+to_cubes = Proc.new do |number|
+  number ** 3
+end
+
+# can also code it without the 'new' keyword
+
+to_cubes = proc do |number|
+  number ** 3
+end
+
+
+to_cubes = proc { |number| number ** 3} #using procs, we've assigned a 'block' to a variable for later use.
+
+
+# here is how you use a proc
+
+#As an example what if we wanted to cube a bunch of numbers using map?
+
+nums1 = [1,2,3,4,5,65]
+nums2 = [9,7,7,6,5,4,24]
+
+results1 = nums1.map(&to_cubes) # the amp sign  tells ruby take this proc and convert it to a block.
+
+results2 = nums2.map(&to_cubes) # the amp sign  tells ruby take this proc and convert it to a block.
+
+# so per the above, we no longer need to rewirte the block code.
+
+p results1 #=> [1, 8, 27, 64, 125, 274625]
+p results2 #=> [729, 343, 343, 216, 125, 64, 13824]
