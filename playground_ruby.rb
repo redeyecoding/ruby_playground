@@ -2036,3 +2036,79 @@ results2 = nums2.map(&to_cubes) # the amp sign  tells ruby take this proc and co
 
 p results1 #=> [1, 8, 27, 64, 125, 274625]
 p results2 #=> [729, 343, 343, 216, 125, 64, 13824]
+
+
+puts "********** more proc examples ***************"
+
+us_dollars =  [10,20,30,40,50,60,70]
+
+to_euros = Proc.new { |currency| currency * 0.93 }
+to_rupees = Proc.new { |currency| currency * 82.28 }
+
+# becuase of procs  we only have to create the block once.
+p us_dollars.map(&to_euros)
+p us_dollars.map(&to_rupees)
+
+
+
+#select  the ppl who are older than 55 and people who are not older than 55
+is_senior = Proc.new { |age| age > 55 }
+ages = [10,34,67,80,24,2,76]
+
+p ages.select(&is_senior)
+p ages.reject(&is_senior)
+
+
+puts "********** procs with parameters ***************"
+# its similar to yielding to a block when writing a function(method)
+
+def talk_about(name, &jeffs_proc) # as  you can see here, adding an amp sign tell ruby that this method is expecting a proc as an argument.
+  puts " Lemme tell you about #{name}"
+  jeffs_proc.call(name)
+end
+
+#another  way to do it.
+def talk_about_2(name)
+  puts "Let me tell you about #{name}"
+  yield(name)
+end
+
+
+good_thing = Proc.new {|jeff_name| puts" #{jeff_name} is a trader"}
+bad_thing = Proc.new {|persons_name| puts" #{persons_name} is not good"}
+
+talk_about("jeff", &good_thing)
+
+
+#you dont have to pass in a proc.. you can also attach a block
+ # ruby makes it flexible to accept a block if y ou dont use proc as argument
+talk_about("Tom") {|name| puts" #{name} is foolish"}
+
+# vice versa
+talk_about_2("Chris", &good_thing)
+
+
+puts "********** lambdas ***************"
+# lambdas are very similar to procs
+good_thing = lambda {|jeff_name| puts" #{jeff_name} is a trader"}
+
+#Lambdas have a different syntax
+good_thing = ->(jeff_name) {puts" #{jeff_name} is a trader"}
+
+
+puts "********** some more exaples ***************"
+
+def prossess_file(file_name, &file_logic)
+  puts "Starting the file processing engine...."
+  file_logic.call(file_name)
+  puts "Ended the file processing engine."
+end
+
+scanning_and_analyzing = Proc.new {print "Scanning and analyzing the "}
+pdf_file = Proc.new {|pdf| puts "#{scanning_and_analyzing.call} #{pdf} file"}
+doc_file = Proc.new {|doc| puts "#{scanning_and_analyzing.call} #{doc} file"}
+gif_file = ->(gif) {puts "#{scanning_and_analyzing.call} #{gif} file"}
+
+prossess_file("file.pdf", &pdf_file)
+prossess_file("file.doc",&doc_file)
+prossess_file("file.gif",&gif_file)
