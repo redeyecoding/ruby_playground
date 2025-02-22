@@ -2112,3 +2112,117 @@ gif_file = ->(gif) {puts "#{scanning_and_analyzing.call} #{gif} file"}
 prossess_file("file.pdf", &pdf_file)
 prossess_file("file.doc",&doc_file)
 prossess_file("file.gif",&gif_file)
+
+
+
+puts "********** CLASSES!!!! ***************"
+
+class MarketTrader
+
+end
+
+#instantiate some objects
+
+day_trader = MarketTrader.new
+
+position_trader = MarketTrader.new
+
+swing_trader = MarketTrader.new
+
+p day_trader.class
+
+
+puts "********** . Instance Variables and the initialize Method ***************"
+# Instance variables being with an "@" symbol. its ust like using "self" in python..
+
+class MarketTrader
+  def initialize
+    puts "INITIALIZE METHOD RAN!!"
+    @trader_type = ""
+    @years_trading = 4
+    @fav_time_frames = [1,15,60]
+  end
+
+
+end
+
+day_trader = MarketTrader.new
+position_trader = MarketTrader.new
+
+p day_trader #=> #<MarketTrader:0x000002ad9ec84e40 @trader_type="", @years_trading=4, @fav_time_frames=[1, 15, 60]>
+
+
+puts "********** InstanceMethod ***************"
+
+class MarketTrader
+  def initialize
+    # its important to note that the instanace variables are not like python where when
+      # creating an attribute, you automatically have access to it by  calling the object.<attribute>
+      # in ruby the "attributes" are private by  default.
+    @trader_type = ""
+    @years_trading = 4
+    @fav_time_frames = [1,15,60]
+    @profits_made = "1,221,000"
+  end
+
+  def day_trader_info
+    "I am a DAY TRADER. and i've been trading for #{@years_trading} years. and i've made well over $#{@profits_made}"
+  end
+end
+
+day_trader = MarketTrader.new
+
+p day_trader.day_trader_info
+
+
+puts "********** Override the to_s Method ***************"
+# by default ruby uses teh "to_s" when attempting to print out the object.
+ # its like using repr in python.. its like also overriding the "print" function
+   # within your class.
+
+class MarketTrader
+  def initialize
+    @trader_type = ""
+    @years_trading = 5
+    @fav_time_frames = [1,15,60]
+    @profits_made = "1,221,000"
+  end
+
+  def to_s
+    "I am a TRADER. and i've been trading for #{@years_trading} years. and i've made well over $#{@profits_made}"
+  end
+end
+
+
+p day_trader = MarketTrader.new
+#now alli need to do is:
+
+puts day_trader
+
+
+puts "********** self ***************"
+# just like python...
+
+
+class MarketTrader
+  puts "Inside MarketTrader class:#{self}"
+
+  def initialize
+    @trader_type = ""
+    @years_trading = 5
+    @fav_time_frames = [1,15,60]
+    @profits_made = "1,221,000"
+  end
+
+  def detail_about_trader
+    puts "Is the trader losing money? #{self.nil?}! And the trader is part of the #{self.class} class."
+  end
+end
+
+day_trader = MarketTrader.new
+
+day_trader.detail_about_trader
+
+
+
+puts "********** Omitting self keyword ***************"
