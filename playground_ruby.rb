@@ -2322,3 +2322,110 @@ jeff_trader = MarketTrader.new
 
 # you don't have to call it with parenthesis like you would in python.
 p jeff_trader.update_years_trading = 7
+
+
+
+puts "********** The attr_reader and attr_writer Methods ***************"
+# there is a short cut to providing getters and setters..
+# typically develops place this code above the intializer
+  # we do this using the 'attr_reader' and 'attr_wriiter' methods.
+# so because of these methods, there is  no need for you to write your own methods..to get or set.
+
+class MarketTrader
+  #get the value --you omit the parenthesis
+    # also you will use symbols to represent them.
+  attr_reader :years_trading, :trader_type
+  attr_writer :years_tradingssss
+
+  def initialize
+    @years_tradings = 10
+    @trader_type = ""
+  end
+end
+
+jeff_trader = MarketTrader.new
+
+p jeff_trader.years_tradingssss = 10 #=> 10
+
+
+
+puts "********** The attr_accessor Method ***************"
+# here is a better way to set it up..where you can automaticattly
+# define getter and Setter methods using the 'attr_accessor' method.
+
+
+#this is the more popular method of setting up getters and setters.
+
+class MarketTrader
+  #get the value --you omit the parenthesis
+    # also you will use symbols to represent them.
+  attr_accessor :years_trading, :years_tradingzzzzz, :trader_type
+
+  def initialize
+    @years_tradingzzzzz = 10
+    @trader_type = ""
+  end
+end
+
+jeff_trader = MarketTrader.new
+
+p jeff_trader.years_trading  #=> nil because this attribute does not exist
+jeff_trader.years_trading = 20 #=> creates it here.
+p jeff_trader.years_trading  #=> 20 so now it exists
+p jeff_trader.trader_type = "Day trader"
+p jeff_trader.years_tradingzzzzz = 6
+
+# using the
+
+
+puts "********** Add Parameters to initialize Method ***************"
+
+
+class MarketTrader
+  attr_accessor :trader_type, :years_trading
+
+  def initialize(trader_type, years_trading)
+    @trader_type = trader_type
+    @years_trading = years_trading
+  end
+end
+
+
+jeff_trader = MarketTrader.new("Day Trader", 24)
+
+p jeff_trader.trader_type
+
+
+
+puts "********** Private Methods ***************"
+# a "Private Method" is an INSTANCE METHOD, that CANNOT
+  # be called outside of the object.
+  # MEANING IT CAN ONLY BE INVOKED BY ANOTHER INSTANCE_METHOD FOR SAID OBJECT.
+
+#  The reason you would wanna us private method is becaues you might want to split up complex login
+   # into different methods that don't require access from outside the object itself.
+    # so its like a helper method
+
+# any methods that fall below the 'private' keyword willl be private.
+
+class MarketTrader
+  attr_accessor :trader_type, :years_trading
+
+  def initialize(trader_type, years_trading)
+    @trader_type = trader_type
+    @years_trading = years_trading
+    @trading_id = generate_trading_id
+  end
+
+
+  private
+
+  def generate_trading_id
+    random_number = rand(10_99...99_1139)
+  end
+end
+
+jeff_trader = MarketTrader.new("Day Trader", 24)
+
+p jeff_trader.trader_type
+jeff_trader.generate_trading_id #=> cannot call :  private method `generate_trading_id' called for #<MarketTrader:0x0000014fffa7abe8 @trader_type="Day Trader", @years_trading=24, @trading_id=174628> (NoMethodError)
