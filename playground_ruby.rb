@@ -2417,6 +2417,9 @@ class MarketTrader
     @trading_id = generate_trading_id
   end
 
+  def get_random_trader_id
+    generate_trading_id
+  end
 
   private
 
@@ -2427,5 +2430,7 @@ end
 
 jeff_trader = MarketTrader.new("Day Trader", 24)
 
-p jeff_trader.trader_type
-jeff_trader.generate_trading_id #=> cannot call :  private method `generate_trading_id' called for #<MarketTrader:0x0000014fffa7abe8 @trader_type="Day Trader", @years_trading=24, @trading_id=174628> (NoMethodError)
+# jeff_trader.generate_trading_id #=> cannot call :  private method `generate_trading_id' called for #<MarketTrader:0x0000014fffa7abe8 @trader_type="Day Trader", @years_trading=24, @trading_id=174628> (NoMethodError)
+
+# using another method to access it below:
+p jeff_trader.get_random_trader_id #=> random number
