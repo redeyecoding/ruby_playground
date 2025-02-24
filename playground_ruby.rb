@@ -2265,6 +2265,60 @@ class MarketTrader
     #so you can't use it by itself.. you have to use the self
     #keyword so ruby knows you're tryhing to access if for a given instance.
   end
-
-
 end
+
+
+
+puts "********** Getter Methods (Read Methods) ***************"
+
+#when labeling a getter method , the common convention is for you to name it the samething
+# that you'r returning..
+
+class MarketTrader
+  def initialize
+    @trader_type = ""
+    @years_trading = 19
+  end
+  def to_s
+    puts " i've been trading for #{@years_trading} years."
+  end
+
+  #getter method
+  def years_trading
+    @years_trading
+  end
+
+  #getter method
+  def trader_type
+    @trader_type
+  end
+end
+
+jeff_trader = MarketTrader.new
+
+p  jeff_trader.years_trading
+
+
+
+puts "********** Setter Methods (write Methods) ***************"
+# setter methods have a specific naming convention.
+
+
+class MarketTrader
+  def initialize
+    @years_tradings = 10
+    @trader_type = ""
+  end
+
+  #setting years of trading for instance
+  def update_years_trading=(years_trading_updated)
+    @years_tradings = years_trading_updated
+  end
+end
+
+#once setup all you have to do is update it
+
+jeff_trader = MarketTrader.new
+
+# you don't have to call it with parenthesis like you would in python.
+p jeff_trader.update_years_trading = 7
