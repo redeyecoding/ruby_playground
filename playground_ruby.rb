@@ -2217,6 +2217,8 @@ class MarketTrader
   def detail_about_trader
     puts "Is the trader losing money? #{self.nil?}! And the trader is part of the #{self.class} class."
   end
+
+
 end
 
 day_trader = MarketTrader.new
@@ -2226,3 +2228,43 @@ day_trader.detail_about_trader
 
 
 puts "********** Omitting self keyword ***************"
+# if you omit the 'self' keyword, ruby will try to find
+# whatever method you're attempting to call, by default
+#on the current object. -- it'll assume its an instance method.
+ # examples explained using the 'details method'
+
+ # its important to note that the convention for ruby develops is to omit
+  #the self keyword if its not needed
+
+class MarketTrader
+  @trader_type = ""
+  @years_trading = 6
+
+  def details
+    # by default you can use this jus like python"
+    self.class_details
+    self.nil_details
+
+    #but you can also omit it and it will still work
+    class_details
+    nil_details
+  end
+
+  def class_details
+    puts" This is the name of the class  #{self.class}"
+  end
+
+  def nil_detail
+    puts" Is it nil? --  #{self.nil?}"
+  end
+
+  # so then Why use self if we can do things without it??
+  # we would need to use self in the following instance
+  def get_class_details_test
+    # 'class' is a ruby keyword
+    #so you can't use it by itself.. you have to use the self
+    #keyword so ruby knows you're tryhing to access if for a given instance.
+  end
+
+
+end
