@@ -92,21 +92,31 @@ class LinkedList:
             temp = temp.next
         return temp      
     
-    def insert(self, value):
-        pass
+    def insert(self,index, value):
+        if index < 0 or index > self.length:
+            return False
+        if self.length == 0 or index == 0:
+            return self.prepend(value) #> O(1)
+        if self.length == index:
+            return self.append(value) #> O(1)
+        
+        temp = self.get_node(index = 1) #> O(n)
+        new_node =  Node(value)
+        new_node.next = temp.next
+        temp.next = new_node
+        self.length += 1
+        return False
+        
     
     def set_value(self, index, new_value):
         if index < 0 or index >= self.length:
             return None
-        temp = self.head
+        temp = self.get_node(index) #> O(n)
         
-        for _ in range(index):
-            if index == temp.value:
-                temp.value = new_value
-                return temp
-            temp = temp.next
-        
-        return -1
+        if temp:
+            temp.value = new_value
+            return True
+        return False
     
     def print_list(self):
         temp = self.head
@@ -116,13 +126,13 @@ class LinkedList:
         print(f'[LENGTH] - Length is {self.length}')
             
     
-    
-
 my_linked_list = LinkedList(10)
+# my_linked_list.append(545)
+# my_linked_list.append(232)
+my_linked_list.insert(0, 2000)
+my_linked_list.insert(3, 5000)
 
-my_linked_list.append(545)
-my_linked_list.append(232)
-print(my_linked_list.get_node(232))
+
 my_linked_list.print_list()
 
 
